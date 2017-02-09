@@ -1,12 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Geochart Challenge!</title>
         
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
 	      google.charts.load('upcoming', {'packages':['geochart']});
@@ -177,15 +175,42 @@
 			  }
 			];
 
-			console.log(awsData[17]);
-
 			// for (var i = 0; i < awsData.length())
 
 	        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
+	        console.log(chart);
+
 	        chart.draw(data, options);
 	      }
 	    </script>
+
+	    <!-- <script type='text/javascript'>
+			google.charts.load('upcoming', {'packages': ['geomap']});
+			google.charts.setOnLoadCallback(drawMap);
+
+			function drawMap() {
+				var data = google.visualization.arrayToDataTable([
+					['City', 'Popularity'],
+					['New York', 200],
+					['Boston', 300],
+					['Miami', 400],
+					['Chicago', 500],
+					['Los Angeles', 600],
+					['Houston', 700]
+				]);
+
+				var options = {};
+				options['region'] = 'world';
+				options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
+				options['dataMode'] = 'markers';
+
+				var container = document.getElementById('map_canvas');
+				var geomap = new google.visualization.GeoMap(container);
+				geomap.draw(data, options);
+			};
+
+		</script> -->
     </head>
     <body>
         <div id="regions_div" style="width: 1024px; height: 768px"></div>
